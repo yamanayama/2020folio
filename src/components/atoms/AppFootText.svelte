@@ -2,7 +2,7 @@
   //common
   import { css } from "emotion";
   import Color from "../../../static/style/Color.js";
-  import { rem, breakpoints, mq, square } from "../../../static/style/Base.js";
+  import { rem } from "../../../static/style/Base.js";
 
   //compornents
 

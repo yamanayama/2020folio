@@ -1,7 +1,9 @@
 <script>
+  //common
   import { css } from "emotion";
   import Color from "../../../static/style/Color.js";
 
+  //variables
   export let segment;
   export let type = "none";
 

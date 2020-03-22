@@ -2,22 +2,12 @@
   //common
   import { css } from "emotion";
   import Color from "../../../static/style/Color.js";
-  import { rem, breakpoints, mq, square } from "../../../static/style/Base.js";
+  import { rem } from "../../../static/style/Base.js";
 
   //compornents
   import HeadLogo from "../../../static/image/common/logo.svg";
 
   //variables
-  const timestamp = new Date();
-  const year = timestamp.getFullYear();
-
-  //https://github.com/sveltejs/svelte/issues/1821
-
-   data () {
-      return {
-        HeadLogo
-      }
-    }
 
   //style
   const copy = css`
