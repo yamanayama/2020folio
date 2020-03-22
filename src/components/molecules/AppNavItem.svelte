@@ -41,6 +41,7 @@
 
   //style
   const current = css`
+    content: ;
     text-transform: uppercase;
     font-family: ${Color.FontFamilyEng100};
     [aria-current] {
@@ -54,23 +55,11 @@
   `;
 </script>
 
-<!-- {#if attr[type].segment === 'blog' ? 'rel="prefetch"' } -->
-
 <li class={current}>
-  {#if attr[type].segment === 'blog'}
-    <a
-      class={link}
-      rel="prefetch"
-      aria-current={segment === attr[type].segment ? attr[type].caption : undefined}
-      href={attr[type].link}>
-      {attr[type].caption}
-    </a>
-  {:else}
     <a
       class={link}
       aria-current={segment === attr[type].segment ? attr[type].caption : undefined}
       href={attr[type].link}>
       {attr[type].caption}
     </a>
-  {/if}
 </li>
