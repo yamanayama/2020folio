@@ -1804,13 +1804,6 @@ rollup-plugin-svelte@^5.0.1:
     rollup-pluginutils "^2.3.3"
     sourcemap-codec "^1.4.4"
 
-rollup-plugin-svg-import@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-svg-import/-/rollup-plugin-svg-import-1.4.0.tgz#2e06e8b73c631710bf5c0a3a1ac21146dafe5a4e"
-  integrity sha512-R5h4t+C6BbgMTg7LMjA+fMx5FINxiQTtQZ3oobAhnwyq/jB5GYHvHun88JkK0LXB/t+5Fx51psA7BmwA9eMUMw==
-  dependencies:
-    "@rollup/pluginutils" "^3.0.4"
-
 rollup-plugin-terser@^4.0.4:
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/rollup-plugin-terser/-/rollup-plugin-terser-4.0.4.tgz#6f661ef284fa7c27963d242601691dc3d23f994e"

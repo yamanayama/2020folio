@@ -2,24 +2,50 @@
   //common
   import { css } from "emotion";
   import Color from "../../../static/style/Color.js";
-  import { rem } from "../../../static/style/Base.js";
+  import { rem,mq } from "../../../static/style/Base.js";
 
   //compornents
-  import HeadLogo from "../../../static/image/common/logo.svg";
+  import HeadLogo from "../../../static/images/common/logo.svg";
 
   //variables
 
   //style
-  const copy = css`
-    font-size: ${rem(10)};
-    color: ${Color.White};
-    text-align: center;
-    font-weight: 600;
-    font-family: ${Color.FontFamilyEng100};
-    letter-spacing: 0.2em;
+  const logo = css`
+    width: 108px;
+    height: 40px;
+
+    svg{
+      width: 100%;
+      height: 100%;
+    }
+
+    ${mq[1]}{
+      width: 154px;
+      height: 56px;
+    }
   `;
+
+  const logoTip = css`
+    display: none;
+
+    ${mq[1]}{
+      display: block;
+      font-size: ${rem(12)};
+      font-family: ${Color.FontFamilyEng100};
+    }
+  `;
+
+  const block = css`
+    ${mq[1]}{
+      margin-bottom: 18px;
+    }
+  `
+
 </script>
 
-<figure>
-  {@html HeadLogo}
-</figure>
+<div class={block}>
+  <div class={logo} >
+    <HeadLogo/>
+  </div>
+  <aside class={logoTip}>Murakami Naomi’s portfolio</aside>
+</div>
