@@ -9,6 +9,8 @@
   //variables
   export let segment;
 
+  //drower
+
   //style
   const nav = css`
     text-transform: uppercase;
@@ -19,12 +21,16 @@
   `;
 </script>
 
-<nav class={nav}>
-  <ul class={list}>
-    <AppNavItem {segment} type="home" value="" />
-    <AppNavItem {segment} type="about" value="" />
-    <AppNavItem {segment} type="work" value="" />
-    <AppNavItem {segment} type="blog" value="" />
-    <AppNavItem {segment} type="contact" value="" />
-  </ul>
-</nav>
+  <nav class={nav}>
+    <ul class={list}>
+      <AppNavItem {segment} type="home" value="" />
+      <AppNavItem {segment} type="about" value="" />
+      <AppNavItem {segment} type="work" value="" />
+      <AppNavItem {segment} type="blog" value="" />
+      <AppNavItem {segment} type="contact" value="" />
+    </ul>
+  </nav>
+
+  <div>
+    <button></button>
+  </div>

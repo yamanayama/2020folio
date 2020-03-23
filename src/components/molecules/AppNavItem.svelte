@@ -52,6 +52,11 @@
 
   const link = css`
     text-decoration: none;
+    font-weight: bold;
+
+    &:hover{
+      background: ${Color.White};
+    }
   `;
 </script>
 
