@@ -12,7 +12,7 @@
 
   //style
   const copy = css`
-    font-size: ${rem(10)};
+    ${rem(10)};
     color: ${Color.White};
     text-align: center;
     font-weight: 600;

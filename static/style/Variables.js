@@ -21,21 +21,21 @@ export const justify = css`
 
 //天地左右
 export function center(direction) {
-  if (direction == xy) {
+  if (direction == 'xy') {
     return {
       position: 'absolute',
       top: '50%',
       left: '50%',
       transform: 'translate(-50%, -50%)',
     };
-  } else if (direction == x) {
+  } else if (direction == 'x') {
     return {
       //左寄せ
       position: 'absolute',
       left: '50%',
       transform: 'translateX(-50%)',
     };
-  } else if (direction == y) {
+  } else if (direction == 'y') {
     return {
       // 右寄せ
       position: 'absolute',
@@ -65,7 +65,7 @@ export function counter(numName, beforeText, afterText) {
 
 export const secP = css`
   padding: 32px 24px;
-  ${mq[2]} {
+  ${mq[1]} {
     padding: 64px 24px;
   }
 `;
@@ -195,3 +195,33 @@ export const clearfix = css`
     clear: both;
   }
 `;
+
+//z-index
+function zMap() {
+  return {
+    header: 'true',
+    nav: 'true',
+    child: {
+      foo: 'true',
+      bar: {
+        hoge: 'true',
+        fuga: 'true',
+        hohoho: 'true'
+      }
+    }
+  }
+}
+
+// // z-index
+// export function z(name, childname = '0') {
+//   let getkey = map.get(zMap, name);
+//   if (childname != 0) {
+//     return {
+//       index(getkey, childname);
+//     }
+//   } else {
+//     return {
+//       inspect(index(zMap, (name, getkey)));
+//   }
+// }
+// }

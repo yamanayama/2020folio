@@ -5,16 +5,19 @@
 
   //compornents
   import AppHeadBox from "../../components/molecules/AppHeadBox.svelte";
+  import AppHeadLogo from "../../components/atoms/AppHeadLogo.svelte";
 
   //variables
-  const header = css`
-    ${mq[1]}{
-      max-width: 260px;
-    }
-  `
 
   //style
+  const header = css`
+    position: fixed;
+    z-index: 100;
 
+    ${mq[1]} {
+      max-width: 260px;
+    }
+  `;
 </script>
 
 <div class={header}>
