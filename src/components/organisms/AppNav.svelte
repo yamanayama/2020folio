@@ -13,8 +13,6 @@
   //drower
   let open = false;
 
-  console.log(open);
-
   //style
   const sp = css`
     ${mq[1]} {

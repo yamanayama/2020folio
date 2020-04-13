@@ -1,38 +1,42 @@
 <script>
+  //common
   import { css } from "emotion";
   import Color from "../../../static/style/Color.js";
-  import { mq } from "../../static/style/Base.js";
+  import { mq } from "../../../static/style/Base.js";
 
+  //compornents
 
+  //variables
+  export let heading = "h2";
+  export let className = "mainHeading";
 
-export default {
-  name: 'heading',
-  props: {
-    heading: {
-      type: String,
-      requires: false,
-      default: '2',
-    },
-  }
-}
-
+  // export default {
+  //   name: 'heading',
+  //   props: {
+  //     heading: {
+  //       type: String,
+  //       requires: false,
+  //       default: '2',
+  //     },
+  //   }
+  // }
 
   // hX の共通 style
   function HcommonStyle() {
     return {
       color: Color.Text100,
-      padding: "8px",
+      padding: "8px"
     };
   }
 
   // h1 の style
   export const H1 = css`
     ${HcommonStyle},
-      fontSize: "24px",
+    fontSize: "24px",
   `;
 
   // h2 の style
-  export const = css`
+  export const display1 = css`
     ${HcommonStyle},
     ${rem(17)}
 
@@ -50,7 +54,7 @@ export default {
     }
   `;
 
-  export const heading = css`
+  export const mainHeading = css`
     ${HcommonStyle},
     ${rem(18)}
 
@@ -82,11 +86,10 @@ export default {
     ${rem(13)}
     font-weight: bold;
 
-    ${mq[1]}{
+    ${mq[1]} {
       ${rem(14)}
     }
   `;
-
 
   export const Body = css`
     ${HcommonStyle},
@@ -96,10 +99,35 @@ export default {
       ${rem(14)}
     }
   `;
-
 </script>
 
-//:isはvue
-<h :is={heading}　class={}>
-  <slot></slot>
-</h :is={heading}>
+<!--
+{#if heading === 'h1'}
+  <h1 class={className}>
+    <slot />
+  </h1>
+{/if}
+
+{#if heading === 'h2'}
+  <h2 class={className}>
+    <slot />
+  </h2>
+{/if}
+
+{#if heading === 'h3'}
+  <h3 class={className}>
+    <slot />
+  </h3>
+{/if}
+
+{#if heading === 'h4'}
+  <h4 class={className}>
+    <slot />
+  </h4>
+{/if}
+
+{#if heading === 'h5'}
+  <h5 class={className}>
+    <slot />
+  </h5>
+{/if} -->

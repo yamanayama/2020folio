@@ -4,12 +4,66 @@
   import Color from "../../static/style/Color.js";
   import { mq, rem, breakpoints } from "../../static/style/Base.js";
   import { center, secP, sp96 } from "../../static/style/Variables.js";
+  import { display1, display2 } from "../../static/style/Title.js";
 
   //compornents
-  import {display1} from "../../components/atoms/AppTitle.svelte";
+  // import AppTitle from "../components/atoms/itle.svelte";
+  import AppTwoColumnWide from "../components/organisms/AppTwoColumnWide.svelte";
+  import AppSlide from "../components/organisms/AppSlide.svelte";
+  import AppCvButton from "../components/atoms/AppCvButton.svelte";
 
   //variables
 
+  let points = [
+    {
+      id: 1,
+      img: "../../static/images/point/point_img01.png",
+      title: "UI/UX",
+      despriction: "UI/UX",
+      body:
+        "ワイヤー制作、UI設計、ユーザーインタビュー、LPO、デザインガイドライン作成など幅広く対応できます。受託制作でCMSデザインを経験し、インハウスでサービスUI、LPOでPDCAを回しながら、スタートアップならではDPCAも展開中です。UX勉強中。"
+    },
+    {
+      id: 2,
+      img: "../../static/images/point/point_img02.png",
+      title: "frontend",
+      despriction: "frontend",
+      body:
+        "マークアップ、スタイルからCSSアニメーション、JSフレームワーク制作まで行います。セマンティックで秩序あるコーディングを行います。アクセシビリティやりたい勢です。"
+    },
+    {
+      id: 3,
+      img: "../../static/images/point/point_img03.png",
+      title: "marketing",
+      despriction: "marketing",
+      body: "GAなどの解析"
+    }
+  ];
+
+  let works = [
+    {
+      id: Math.random(),
+      img: "../../static/images/works/works_img01",
+      title: "hogehoge",
+      despriction: "UI/UX",
+      body: "hogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehoge"
+    },
+    {
+      id: Math.random(),
+      img: "../../static/images/works/works_img02",
+      title: "芝助",
+      despriction: "芝助",
+      body: "芝助芝助芝助芝助芝助芝助芝助芝助芝助芝助芝助芝助芝助芝助芝助芝助"
+    },
+    {
+      id: Math.random(),
+      img: "../../static/images/works/works_img03",
+      title: "UI/UX",
+      despriction: "UI/UX",
+      body:
+        "ワイヤー制作、UI設計、ユーザーインタビュー、LPO、デザインガイドライン作成など幅広く対応できます。受託制作でCMSデザインを経験し、インハウスでサービスUI、LPOでPDCAを回しながら、スタートアップならではDPCAも展開中です。UX勉強中。"
+    }
+  ];
   //style
 
   //animation
@@ -32,8 +86,9 @@
     background: ${Color.Gray500};
     height: 90vh;
     position: relative;
+
     ${mq[1]} {
-      margin-left: 100px;
+      margin-left: 240px;
     }
   `;
 
@@ -96,14 +151,21 @@
   const vision = css`
     ${sp96};
     padding: 4rem 0;
-    display: flex;
-    justify-content: space-between;
     position: relative;
+    margin-left: 16px;
+
+    ${mq[1]} {
+      max-width: ${breakpoints[2]}px;
+      margin-left: 240px;
+      padding: 120px 0;
+      display: flex;
+      justify-content: space-between;
+    }
 
     &::before {
       content: "portfolio";
       position: absolute;
-      top: -14px;
+      top: -8px;
       right: 0;
       text-transform: uppercase;
       font-weight: bold;
@@ -117,11 +179,6 @@
         top: -18px;
       }
     }
-
-    ${mq[1]} {
-      max-width: ${breakpoints[2]}px;
-      padding: 120px 0;
-    }
   `;
 
   const visionCopy = css`
@@ -129,27 +186,72 @@
     ${rem(60)};
     text-transform: uppercase;
     font-weight: bold;
+    margin-bottom: 2rem;
+    width: 48%;
 
     ${mq[1]} {
       ${rem(140)};
     }
   `;
 
-  const visionBlock = css`
-    display: flex;
-    justfy-content: space-between;
+  //point
+  const point = css`
+    position: relative;
+    overflow: hidden;
   `;
 
-  const visionTitle = css`
-    display: flex;
-    justfy-content: space-between;
+  const pointBlock = css`
+    ${sp96};
+    padding: 4rem 0;
+    margin-left: 16px;
+
+    ${mq[1]} {
+      max-width: ${breakpoints[2]}px;
+      margin-left: 240px;
+      padding: 120px 0;
+    }
   `;
 
-  const visionBody = css`
-    display: flex;
-    justfy-content: space-between;
+  const pointBackground = css`
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 50%;
+    background-color: #f2f3f4;
+    height: 100%;
+    z-index: -10;
+  `;
+
+  //works
+  const work = css`
+    width: 100%;
+  `;
+
+  const workWrap = css`
+    ${sp96};
+    padding: 4rem 0;
+    margin-left: 16px;
+
+    ${mq[1]} {
+      max-width: ${breakpoints[2]}px;
+      margin-left: 240px;
+      padding: 120px 0;
+    }
   `;
 </script>
+
+<style>
+  .visionBlock {
+    width: 42%;
+  }
+
+  .visionTitle {
+    margin-bottom: 1rem;
+  }
+  .visionBody p {
+    margin-bottom: 1rem;
+  }
+</style>
 
 <svelte:head>
   <title>Hello Noel | murakami naomi's portfolio site</title>
@@ -176,16 +278,44 @@
     <br />
     vision
   </div>
-  <div class={visionBlock}>
-    <p class={visionTitle} {display1}>
+  <section class="visionBlock">
+    <!-- <AppTitle heading="h2" className="display2" class={visionTitle}>
       サービスと技術を繋ぐ
       <br />
       ヒトとモノを繋ぐ
-    </p>
-    <div class={visionBody}>
-      my
+    </AppTitle> -->
+    <h2 class="visionTitle #{display1}">
+      サービスと技術を繋ぐ
       <br />
-      vision
+      ヒトとモノを繋ぐ
+    </h2>
+    <div class="visionBody">
+      <p>aaaaaaaaaaaaaaaaaa</p>
+      <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+      <p>
+        aaaaaaaaaaaaaaaaaaaaaaaab
+        <br />
+        aaaaaaaaaaaa
+      </p>
     </div>
-  </div>
+  </section>
+</div>
+
+<div class={point}>
+  <div class={pointBackground} />
+  <section class={pointBlock}>
+    <h2 class={display2}>skills</h2>
+
+    {#each points as point (point.id)}
+      <AppTwoColumnWide {...point} />
+    {/each}
+  </section>
+</div>
+
+<div class={work}>
+  <section class={workWrap}>
+    <h2 class={display2}>works</h2>
+    <AppSlide {works} />
+    <AppCvButton className="primary" ariaLabel="もっと見る" type="button" />
+  </section>
 </div>
