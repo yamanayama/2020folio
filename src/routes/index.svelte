@@ -3,7 +3,7 @@
   import { css, keyframes } from "emotion";
   import Color from "../../static/style/Color.js";
   import { mq, rem, breakpoints } from "../../static/style/Base.js";
-  import { center, secP, sp96 } from "../../static/style/Variables.js";
+  import { center, secP, sp96, leftP } from "../../static/style/Variables.js";
   import { display1, display2 } from "../../static/style/Title.js";
 
   //compornents
@@ -82,14 +82,10 @@
 
   //hero
   const hero = css`
-    margin-left: 16px;
+    ${leftP};
     background: ${Color.Gray500};
     height: 90vh;
     position: relative;
-
-    ${mq[1]} {
-      margin-left: 240px;
-    }
   `;
 
   const heroImg = css`
@@ -152,11 +148,10 @@
     ${sp96};
     padding: 4rem 0;
     position: relative;
-    margin-left: 16px;
+    ${leftP};
 
     ${mq[1]} {
       max-width: ${breakpoints[2]}px;
-      margin-left: 240px;
       padding: 120px 0;
       display: flex;
       justify-content: space-between;
@@ -203,11 +198,10 @@
   const pointBlock = css`
     ${sp96};
     padding: 4rem 0;
-    margin-left: 16px;
+    ${leftP};
 
     ${mq[1]} {
       max-width: ${breakpoints[2]}px;
-      margin-left: 240px;
       padding: 120px 0;
     }
   `;
@@ -229,12 +223,11 @@
 
   const workWrap = css`
     ${sp96};
+    ${leftP};
     padding: 4rem 0;
-    margin-left: 16px;
 
     ${mq[1]} {
       max-width: ${breakpoints[2]}px;
-      margin-left: 240px;
       padding: 120px 0;
     }
   `;
@@ -316,6 +309,5 @@
   <section class={workWrap}>
     <h2 class={display2}>works</h2>
     <AppSlide {works} />
-    <AppCvButton className="primary" ariaLabel="もっと見る" type="button" />
   </section>
 </div>

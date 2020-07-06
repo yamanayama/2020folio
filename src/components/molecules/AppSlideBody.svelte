@@ -12,16 +12,10 @@
   export let title = "";
 
   //style
-  const itemBlock = css`
-    ${mq[1]} {
-      width: 48%;
-    }
-  `;
+  const itemBlock = css``;
 
   const itemText = css`
-    ${mq[1]} {
-      width: 48%;
-    }
+
   `;
 </script>
 

@@ -5,18 +5,23 @@
   import { mq } from "../../../static/style/Base.js";
 
   //compornents
-  import AppSlideBlock from "../organisms/AppSlideBlock.svelte";
+  import AppSlideImgItem from "../atoms/AppSlideImgItem.svelte";
 
   //variables
   export let works = [];
 
   //style
-  const slideBlock = css`
+  const slideImage = css`
+    width: 100%;
+    display: flex;
+
     ${mq[1]} {
     }
   `;
 </script>
 
-<div class={slideBlock}>
-  <AppSlideBlock {works} />
-</div>
+<ul class={slideImage}>
+  {#each works as work (work.id)}
+    <AppSlideImgItem {...work} />
+  {/each}
+</ul>

@@ -21,7 +21,7 @@ export const display1 = css`
     ${HcommonStyle()}
     ${rem(17)}
     text-transform: capitalize;
-    padding-bottom: 1rem;
+    margin-bottom: 1rem;
 
   ${mq[1]}{
     ${rem(34)}
@@ -35,6 +35,7 @@ export const display2 = css`
     color: transparent;
     text-transform: uppercase;
     letter-spacing: .03em;
+    margin-bottom: 1rem;
 
   ${mq[1]}{
     ${rem(48)}

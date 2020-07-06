@@ -26,14 +26,25 @@
     };
   }
 
-  const worksImgItem = css`
+  const slideImageItem = css`
+    width: 100%;
+    height: 240px;
+
     ${mq[1]} {
-      width: 48%;
+      min-width: 800px;
+      height: 400px;
+      list-style-type: none;
+      overflow: hidden;
+      margin-right: 2em;
+    }
+
+    img {
+      object-fit: cover;
     }
   `;
 </script>
 
-<li class={worksImgItem}>
+<li class={slideImageItem}>
   <picture>
     <source media="(min-width: 768px)" srcset="{img}_l.jpg" />
     <img src="{img}_s.jpg" alt={despriction} />
