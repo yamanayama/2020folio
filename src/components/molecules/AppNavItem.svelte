@@ -54,17 +54,17 @@
     text-decoration: none;
     font-weight: bold;
 
-    &:hover{
-      background: ${Color.White};
+    &:hover {
+      background: rgba(255, 255, 255, 0.8);
     }
   `;
 </script>
 
 <li class={current}>
-    <a
-      class={link}
-      aria-current={segment === attr[type].segment ? attr[type].caption : undefined}
-      href={attr[type].link}>
-      {attr[type].caption}
-    </a>
+  <a
+    class={link}
+    aria-current={segment === attr[type].segment ? attr[type].caption : undefined}
+    href={attr[type].link}>
+    {attr[type].caption}
+  </a>
 </li>

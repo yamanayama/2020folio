@@ -1,27 +1,5 @@
 <script>
   //common
-  import { css } from "emotion";
-  import { rem, breakpoints, mq, square } from "../../static/style/Base.js";
-  import Color from "../../static/style/Color.js";
-  import {
-    centerF,
-    justify,
-    radius,
-    center,
-    gridLayout,
-    counter,
-    secP,
-    maxW,
-    sp96,
-    card,
-    truncate,
-    lineTruncate,
-    multipleLine,
-    linkColor,
-    fullWidth,
-    shadow,
-    clearfix
-  } from "../../static/style/Variables.js";
 
   //compornents
   import Nav from "../components/organisms/AppNav.svelte";
@@ -33,8 +11,7 @@
 </script>
 
 <style>
-  main {
-  }
+
 </style>
 
 <Header {segment} />
