@@ -1,15 +1,14 @@
 const contentful = require('contentful')
 
-//contentfulの設定値
 const client = contentful.createClient({
-  space: "wnmf0uk29ees401",
+  // This is the space ID. A space is like a project folder in Contentful terms
+  space: "wnmf0uk29ees",
+  // This is the access token for this space. Normally you get both ID and the token in the Contentful web app
   accessToken: "u4gO-dAQKVJhBnMs6lHGT_XbSvor8DKBUD8nt7CloQs"
 })
 
 
 //記事一覧取得と記事取得
-
-// slug指定で記事取得。これid指定の方が綺麗だからできるなら後で直す。
 const fetchEntryByContentIdAndSlug = (id, slug) => client.getEntries({
     content_type: id,
     'fields.slug[in]': slug
@@ -19,7 +18,6 @@ const fetchEntryByContentIdAndSlug = (id, slug) => client.getEntries({
     console.error(error)
   })
 
-// 記事一覧取得
 const fetchEntriesForContentId = (id, orderBy) => client.getEntries({
     content_type: id,
     order: orderBy
@@ -31,5 +29,5 @@ const fetchEntriesForContentId = (id, orderBy) => client.getEntries({
     console.error(error)
   })
 
-  export const getArticles = () => fetchEntriesForContentId('article')
-  export const getArticle = (slug) => fetchEntryByContentIdAndSlug('article', slug)
+export const getArticles = () => fetchEntriesForContentId('article')
+export const getArticle = (slug) => fetchEntryByContentIdAndSlug('article', slug)

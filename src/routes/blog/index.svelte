@@ -54,9 +54,8 @@
 </svelte:head>
 
 <h1>blog</h1>
-
 <ul>
 	{#each posts as post}
-		<li><a rel='prefetch' href='{post.fields.slug}'>{post.fields.title} - {format(post.sys.createdAt, "YYYY/MM/DD")}</a></li>
+		<li><a rel='prefetch' href='{post.fields.slug}'>{post.fields.title}</a></li>
 	{/each}
 </ul>

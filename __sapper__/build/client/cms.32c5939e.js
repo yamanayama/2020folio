@@ -1,1 +1,0 @@
-const e=require("contentful").createClient({space:process.env.CTF_SPACE_ID,accessToken:process.env.CTF_CDA_ACCESS_TOKEN}),t=()=>((t,c)=>e.getEntries({content_type:t,order:c}).then(e=>e.items).catch(e=>{console.error(e)}))("article"),c=t=>((t,c)=>e.getEntries({content_type:t,"fields.slug[in]":c}).then(e=>e.items[0]).catch(e=>{console.error(e)}))("article",t);export{c as a,t as g};
