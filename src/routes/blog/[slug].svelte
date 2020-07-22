@@ -1,15 +1,15 @@
 <script context="module">
-	export async function preload({ params, query }) {
-		// the `slug` parameter is available because
-		// this file is called [slug].svelte
-		const res = await this.fetch(`blog/${params.slug}.json`);
-		const data = await res.json();
+	import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+	import { getArticle } from '../../api/cms.js'
 
-		if (res.status === 200) {
-			return { post: data };
-		} else {
-			this.error(res.status, data.message);
-		}
+	export function preload({ params, query }) {
+			return getArticle(params.slug)
+					.then(post => {
+							let html = documentToHtmlString(post.fields.body)
+							post.html = html
+							console.log(post)
+							return { post };
+					});
 	}
 </script>
 
@@ -54,10 +54,10 @@
 </style>
 
 <svelte:head>
-	<title>{post.title}</title>
+	<title>{post.fields.title} | murakami naomi's portfolio site</title>
 </svelte:head>
 
-<h1>{post.title}</h1>
+<h1>{post.fields.title}</h1>
 
 <div class='content'>
 	{@html post.html}

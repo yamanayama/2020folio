@@ -26,9 +26,10 @@ export default {
   Link100: '#222',
 
   /* 無彩色(若い番号から使用頻度高) */
+  Gray600: '#7b7d81',
   Gray500: '#C5C5C5',
-  Gray400: 'lighten(#222, 16 %)',
-  Gray300: 'lighten(#FDFDFD, 16 %)',
+  Gray400: 'lighten(#222, 16%)',
+  Gray300: 'lighten(#FDFDFD, 16%)',
   Gray200: '#F2F3F4',
   Gray100: '#FDFDFD',
 

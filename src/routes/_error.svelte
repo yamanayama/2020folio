@@ -1,8 +1,26 @@
 <script>
+  //common
+  import { css, keyframes } from "emotion";
+  import Color from "../../static/style/Color.js";
+  import { mq, rem, breakpoints } from "../../static/style/Base.js";
+  import { center, secP, sp96, leftP } from "../../static/style/Variables.js";
+	import { display1, display2 } from "../../static/style/Title.js";
+
 	export let status;
 	export let error;
 
 	const dev = process.env.NODE_ENV === 'development';
+
+	const aboutBlock = css `
+	${leftP};
+	${sp96};
+	padding: 4rem 0;
+
+	${mq[1]} {
+		padding-top: 80px;
+		max-width: ${breakpoints[2]}px;
+	}
+`;
 </script>
 
 <style>
@@ -10,20 +28,9 @@
 		margin: 0 auto;
 	}
 
-	h1 {
-		font-size: 2.8em;
-		font-weight: 700;
-		margin: 0 0 0.5em 0;
-	}
-
 	p {
 		margin: 1em auto;
-	}
-
-	@media (min-width: 480px) {
-		h1 {
-			font-size: 4em;
-		}
+		font-size: 14px;
 	}
 </style>
 
@@ -31,7 +38,7 @@
 	<title>{status}</title>
 </svelte:head>
 
-<h1>{status}</h1>
+<h1 class={display1}>{status}</h1>
 
 <p>{error.message}</p>
 

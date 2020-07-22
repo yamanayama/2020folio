@@ -6,12 +6,10 @@
 
   //compornents
   import AppNavItem from "../../components/molecules/AppNavItem.svelte";
+  import AppDrowerWrap from "../../components/atoms/AppDrowerWrap.svelte";
 
   //variables
   export let segment;
-
-  //drower
-  let open = false;
 
   //style
   const sp = css`
@@ -78,19 +76,7 @@
 
 <nav class={nav}>
   <div class={sp}>
-    <button class={drawer} for="header-switch" on:click={() => (open = !open)}>
-      <span class={drawerBorder} />
-    </button>
-
-    {#if open}
-      <ul class={list}>
-        <AppNavItem {segment} type="home" value="" />
-        <AppNavItem {segment} type="about" value="" />
-        <AppNavItem {segment} type="work" value="" />
-        <AppNavItem {segment} type="blog" value="" />
-        <AppNavItem {segment} type="contact" value="" />
-      </ul>
-    {/if}
+    <AppDrowerWrap />
   </div>
 
   <div class={pc}>

@@ -24,7 +24,7 @@
     },
     work: {
       caption: "work",
-      link: "m69kn",
+      link: "work",
       segment: "work"
     },
     blog: {

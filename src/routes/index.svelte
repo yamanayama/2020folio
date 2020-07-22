@@ -10,14 +10,14 @@
   // import AppTitle from "../components/atoms/itle.svelte";
   import AppTwoColumnWide from "../components/organisms/AppTwoColumnWide.svelte";
   import AppSlide from "../components/organisms/AppSlide.svelte";
+  import AppForm from "../components/organisms/AppForm.svelte";
   import AppCvButton from "../components/atoms/AppCvButton.svelte";
 
   //variables
-
   let points = [
     {
       id: 1,
-      img: "../../static/images/point/point_img01.png",
+      img: "../images/top/point_img01.jpg",
       title: "UI/UX",
       despriction: "UI/UX",
       body:
@@ -25,7 +25,7 @@
     },
     {
       id: 2,
-      img: "../../static/images/point/point_img02.png",
+      img: "../images/top/point_img02.jpg",
       title: "frontend",
       despriction: "frontend",
       body:
@@ -33,7 +33,7 @@
     },
     {
       id: 3,
-      img: "../../static/images/point/point_img03.png",
+      img: "../images/top/point_img03.jpg",
       title: "marketing",
       despriction: "marketing",
       body: "GAなどの解析"
@@ -43,25 +43,28 @@
   let works = [
     {
       id: Math.random(),
-      img: "../../static/images/works/works_img01",
+      link: "",
+      img: "../images/works/works_thum01.jpg",
       title: "hogehoge",
       despriction: "UI/UX",
-      body: "hogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehoge"
+      body: "ああああああああああああああああああ"
     },
     {
       id: Math.random(),
-      img: "../../static/images/works/works_img02",
+      link: "",
+      img: "../images/works/works_thum02.jpg",
       title: "芝助",
       despriction: "芝助",
       body: "芝助芝助芝助芝助芝助芝助芝助芝助芝助芝助芝助芝助芝助芝助芝助芝助"
     },
     {
       id: Math.random(),
-      img: "../../static/images/works/works_img03",
+      link: "",
+      img: "../images/works/works_thum03.jpg",
       title: "UI/UX",
       despriction: "UI/UX",
       body:
-        "ワイヤー制作、UI設計、ユーザーインタビュー、LPO、デザインガイドライン作成など幅広く対応できます。受託制作でCMSデザインを経験し、インハウスでサービスUI、LPOでPDCAを回しながら、スタートアップならではDPCAも展開中です。UX勉強中。"
+        "ワイヤー制作、UI設計、ユーザーインタビュー、LPO、"
     }
   ];
   //style
@@ -155,6 +158,7 @@
       padding: 120px 0;
       display: flex;
       justify-content: space-between;
+      ${rem(14)};
     }
 
     &::before {
@@ -182,7 +186,6 @@
     text-transform: uppercase;
     font-weight: bold;
     margin-bottom: 2rem;
-    width: 48%;
 
     ${mq[1]} {
       ${rem(140)};
@@ -203,6 +206,7 @@
     ${mq[1]} {
       max-width: ${breakpoints[2]}px;
       padding: 120px 0;
+      ${rem(14)};
     }
   `;
 
@@ -229,6 +233,23 @@
     ${mq[1]} {
       max-width: ${breakpoints[2]}px;
       padding: 120px 0;
+      ${rem(14)};
+    }
+  `;
+
+  //contact
+  const contact = css`
+    width: 100%;
+  `;
+  const contactWrap = css`
+    ${sp96};
+    ${leftP};
+    padding: 4rem 0;
+
+    ${mq[1]} {
+      max-width: ${breakpoints[2]}px;
+      padding: 120px 0;
+      ${rem(14)};
     }
   `;
 </script>
@@ -272,11 +293,6 @@
     vision
   </div>
   <section class="visionBlock">
-    <!-- <AppTitle heading="h2" className="display2" class={visionTitle}>
-      サービスと技術を繋ぐ
-      <br />
-      ヒトとモノを繋ぐ
-    </AppTitle> -->
     <h2 class="visionTitle #{display1}">
       サービスと技術を繋ぐ
       <br />
@@ -309,5 +325,12 @@
   <section class={workWrap}>
     <h2 class={display2}>works</h2>
     <AppSlide {works} />
+  </section>
+</div>
+
+<div class={contact}>
+  <section class={contactWrap}>
+    <h2 class={display2}>contact</h2>
+    <AppForm />
   </section>
 </div>

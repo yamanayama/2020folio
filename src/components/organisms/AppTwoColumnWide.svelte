@@ -19,22 +19,37 @@
   //style
 
   const pointBlock = css`
-    background: ${Color.White};
-    &:nth-child(2n + 1) {
-      .css-nq8m9a {
+    margin-bottom: 40px;
+
+    ${mq[1]} {
+      margin-bottom: 240px;
+    }
+
+    ${mq[2]} {
+      margin-bottom: 320px;
+    }
+
+    &:nth-of-type(2) {
+      .css-1tis47d {
         //苦渋の選択
         flex-direction: row-reverse;
+        color: ${Color.White};
+      }
 
-        &::before {
+      ${mq[1]} {
+        .css-sb83h2{
           position: absolute;
           left: 0;
         }
       }
-    }
-    &:nth-child(2n + 1) {
-      //苦渋の選択
-      .css-1hi0xkk {
-        background: ${Color.Gray500};
+
+      .css-1fhl3r {
+        background: ${Color.Gray600};
+        color: ${Color.White};
+      }
+
+      .css-dwvb5m{
+        color: ${Color.White};
       }
     }
   `;
@@ -43,6 +58,8 @@
     ${mq[1]} {
       display: flex;
       justify-content: space-between;
+      align-items: start;
+      position: relative;
     }
   `;
 
@@ -52,7 +69,8 @@
 
     ${mq[1]} {
       padding: 48px 56px;
-      width: 40%;
+      background: ${Color.White};
+      width: 46%;
     }
   `;
 
@@ -61,7 +79,17 @@
     padding: 16px 24px;
 
     ${mq[1]} {
-      max-width: 480px;
+      position: absolute;
+      top: 40px;
+      bottom: 0;
+      right: 0;
+      width: calc(64% - 16px);
+      z-index: -1;
+
+      img{
+        width: 100%;
+        height: auto;
+      }
     }
   `;
 </script>

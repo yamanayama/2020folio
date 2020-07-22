@@ -20,7 +20,7 @@ export function rem(size) {
 * 1280px〜PC(小）
 * 1920px〜PC（大）
 ------------*/
-export const breakpoints = [480, 768, 1280, 1920];
+export const breakpoints = [480, 768, 1040, 1920];
 export const mq = breakpoints.map(
   bp => `@media (min-width: ${bp}px)`
 );

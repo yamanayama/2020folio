@@ -5,7 +5,6 @@
   import { mq } from "../../../static/style/Base.js";
 
   //compornents
-  import AppSlideButton from "../molecules/AppSlideButton.svelte";
   import AppSlideBody from "../molecules/AppSlideBody.svelte";
   import AppSlideImg from "../molecules/AppSlideImg.svelte";
 
@@ -14,8 +13,12 @@
 
   //style
   const slideBox = css`
+    display: grid;
+    grid-template-columns: 1fr;
+
     ${mq[1]} {
-      width: 48%;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
     }
   `;
 </script>
@@ -24,8 +27,6 @@
   {#each works as work (work.id)}
     <AppSlideBody {...work} />
   {/each}
-
-  <AppSlideButton />
 </div>
 
-<AppSlideImg {works} />
+<!-- <AppSlideImg {works} /> -->

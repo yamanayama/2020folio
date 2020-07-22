@@ -5,6 +5,7 @@
   import { mq } from "../../../static/style/Base.js";
 
   //compornents
+  import AppSlideButton from "../molecules/AppSlideButton.svelte";
   import AppSlideBlock from "../organisms/AppSlideBlock.svelte";
 
   //variables
@@ -19,4 +20,5 @@
 
 <div class={slideBlock}>
   <AppSlideBlock {works} />
+  <AppSlideButton />
 </div>
